@@ -270,7 +270,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s07-Em-5LC">
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s07-Em-5LC">
                                 <rect key="frame" x="41" y="706" width="128" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1k-cf-QSS">
@@ -292,6 +292,9 @@
                             <constraint firstItem="bjt-zA-Sbd" firstAttribute="top" secondItem="Stm-wr-UMK" secondAttribute="top" constant="100" id="YaN-25-7AU"/>
                             <constraint firstItem="bjt-zA-Sbd" firstAttribute="leading" secondItem="Stm-wr-UMK" secondAttribute="leading" constant="41" id="auA-I0-LoW"/>
                             <constraint firstItem="Stm-wr-UMK" firstAttribute="trailing" secondItem="bjt-zA-Sbd" secondAttribute="trailing" constant="41" id="b0h-jv-KbP"/>
+                            <constraint firstItem="s07-Em-5LC" firstAttribute="top" secondItem="bjt-zA-Sbd" secondAttribute="bottom" constant="8" id="d3h-7K-RgI"/>
+                            <constraint firstItem="s07-Em-5LC" firstAttribute="leading" secondItem="Stm-wr-UMK" secondAttribute="leading" constant="41" id="eca-E6-yZp"/>
+                            <constraint firstItem="Stm-wr-UMK" firstAttribute="bottom" secondItem="s07-Em-5LC" secondAttribute="bottom" constant="38" id="jzx-lN-R3K"/>
                         </constraints>
                     </view>
                 </viewController>
