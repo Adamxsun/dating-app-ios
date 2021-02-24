@@ -176,21 +176,22 @@
             </objects>
             <point key="canvasLocation" x="8.6956521739130448" y="-463.39285714285711"/>
         </scene>
-        <!--View Controller-->
+        <!--Upload View-->
         <scene sceneID="DHZ-KF-R1K">
             <objects>
-                <viewController id="nF8-5k-dz9" customClass="ViewController" customModule="dating" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nF8-5k-dz9" customClass="UploadView" customModule="dating" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8BV-cH-Loa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clipart1831124" translatesAutoresizingMaskIntoConstraints="NO" id="lXA-My-cKe">
-                                <rect key="frame" x="59" y="100" width="297" height="384"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clipart1831124" translatesAutoresizingMaskIntoConstraints="NO" id="lXA-My-cKe">
+                                <rect key="frame" x="58.5" y="100" width="297" height="384"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="384" id="d9I-fo-6q1"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVM-ef-0BP">
-                                <rect key="frame" x="59" y="561" width="297" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVM-ef-0BP">
+                                <rect key="frame" x="58.5" y="561" width="297" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Upload Photo" backgroundImage="Background">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -199,13 +200,44 @@
                                     <action selector="uploadButton:" destination="nF8-5k-dz9" eventType="touchUpInside" id="Ulq-K3-RB9"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDv-HV-tn5">
+                                <rect key="frame" x="58.5" y="619" width="297" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="DyN-Fo-EUS"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="297" id="JH4-ty-xJz"/>
+                                    <constraint firstAttribute="width" constant="297" id="Qm8-Nh-HmE"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="an7-I4-6wt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Skip" backgroundImage="Background">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="SkipButton:" destination="nF8-5k-dz9" eventType="touchUpInside" id="MYb-RG-CeR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XVz-gD-z0x"/>
                         <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="FDv-HV-tn5" firstAttribute="leading" secondItem="RVM-ef-0BP" secondAttribute="leading" id="4Xx-vf-vno"/>
+                            <constraint firstItem="FDv-HV-tn5" firstAttribute="trailing" secondItem="RVM-ef-0BP" secondAttribute="trailing" id="6Qn-fY-Ij2"/>
+                            <constraint firstItem="FDv-HV-tn5" firstAttribute="top" secondItem="RVM-ef-0BP" secondAttribute="bottom" constant="8" symbolic="YES" id="96C-OW-fYh"/>
+                            <constraint firstItem="XVz-gD-z0x" firstAttribute="trailing" secondItem="FDv-HV-tn5" secondAttribute="trailing" constant="58.5" id="ENV-oJ-LRH"/>
+                            <constraint firstItem="lXA-My-cKe" firstAttribute="top" secondItem="XVz-gD-z0x" secondAttribute="top" constant="100" id="QDd-qK-c5m"/>
+                            <constraint firstItem="XVz-gD-z0x" firstAttribute="bottom" secondItem="FDv-HV-tn5" secondAttribute="bottom" constant="139" id="WQj-Bd-CA4"/>
+                            <constraint firstItem="FDv-HV-tn5" firstAttribute="top" secondItem="RVM-ef-0BP" secondAttribute="bottom" constant="8" symbolic="YES" id="Xgd-nl-Lz3"/>
+                            <constraint firstItem="XVz-gD-z0x" firstAttribute="bottom" secondItem="FDv-HV-tn5" secondAttribute="bottom" constant="139" id="ZAZ-Ji-Kw3"/>
+                            <constraint firstItem="RVM-ef-0BP" firstAttribute="top" secondItem="lXA-My-cKe" secondAttribute="bottom" constant="77" id="ZYz-km-nHz"/>
+                            <constraint firstItem="FDv-HV-tn5" firstAttribute="leading" secondItem="lXA-My-cKe" secondAttribute="leading" id="bhP-qD-6Lg"/>
+                            <constraint firstItem="FDv-HV-tn5" firstAttribute="trailing" secondItem="lXA-My-cKe" secondAttribute="trailing" id="dwa-KO-wDK"/>
+                            <constraint firstItem="FDv-HV-tn5" firstAttribute="centerX" secondItem="8BV-cH-Loa" secondAttribute="centerX" id="rfI-k4-YlR"/>
+                            <constraint firstItem="FDv-HV-tn5" firstAttribute="leading" secondItem="XVz-gD-z0x" secondAttribute="leading" constant="58.5" id="zv2-nK-UVn"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="myImageView" destination="lXA-My-cKe" id="XfP-Db-Nu3"/>
-                        <segue destination="kg5-HC-Cs6" kind="showDetail" identifier="FourthSegue" id="MYS-8b-oyh"/>
+                        <segue destination="kg5-HC-Cs6" kind="showDetail" identifier="FourthSegue" id="uSb-pC-8R0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mbZ-aR-Xcp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -239,9 +271,18 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s07-Em-5LC">
-                                <rect key="frame" x="41" y="726" width="332" height="82"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="41" y="706" width="128" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1k-cf-QSS">
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                        <state key="normal" image="like2"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oz8-yL-pRw">
+                                        <rect key="frame" x="64" y="0.0" width="64" height="64"/>
+                                        <state key="normal" image="dislike3"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Stm-wr-UMK"/>
@@ -265,7 +306,9 @@
         <image name="FB" width="285" height="69"/>
         <image name="Google" width="285" height="69"/>
         <image name="clipart1831124" width="370" height="400"/>
+        <image name="dislike3" width="64" height="64"/>
         <image name="fine" width="200" height="200"/>
+        <image name="like2" width="64" height="64"/>
         <image name="pinred" width="1024" height="768"/>
         <image name="spiderman" width="1200" height="1200"/>
         <systemColor name="labelColor">

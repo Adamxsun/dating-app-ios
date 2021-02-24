@@ -16,7 +16,7 @@
 		5BB2568525E47AFB00FE2AC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BB2568325E47AFB00FE2AC7 /* LaunchScreen.storyboard */; };
 		5BB2569025E47AFB00FE2AC7 /* datingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB2568F25E47AFB00FE2AC7 /* datingTests.swift */; };
 		5BB2569B25E47AFB00FE2AC7 /* datingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB2569A25E47AFB00FE2AC7 /* datingUITests.swift */; };
-		5BC5D50F25E4D85F00258D4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5D50E25E4D85F00258D4D /* ViewController.swift */; };
+		5BC5D50F25E4D85F00258D4D /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5D50E25E4D85F00258D4D /* UploadView.swift */; };
 		5BC5D51425E6030E00258D4D /* mainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5D51325E6030E00258D4D /* mainPage.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +53,7 @@
 		5BB2569625E47AFB00FE2AC7 /* datingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = datingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB2569A25E47AFB00FE2AC7 /* datingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = datingUITests.swift; sourceTree = "<group>"; };
 		5BB2569C25E47AFB00FE2AC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5BC5D50E25E4D85F00258D4D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5BC5D50E25E4D85F00258D4D /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
 		5BC5D51325E6030E00258D4D /* mainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,7 +109,7 @@
 				5BB2567A25E47AFA00FE2AC7 /* SceneDelegate.swift */,
 				5BB2567C25E47AFA00FE2AC7 /* HomeViewController.swift */,
 				5B96608925E4AC1200B6DCD2 /* SignUp.swift */,
-				5BC5D50E25E4D85F00258D4D /* ViewController.swift */,
+				5BC5D50E25E4D85F00258D4D /* UploadView.swift */,
 				5BC5D51325E6030E00258D4D /* mainPage.swift */,
 				5BB2567E25E47AFA00FE2AC7 /* Main.storyboard */,
 				5BB2568125E47AFB00FE2AC7 /* Assets.xcassets */,
@@ -267,7 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BC5D50F25E4D85F00258D4D /* ViewController.swift in Sources */,
+				5BC5D50F25E4D85F00258D4D /* UploadView.swift in Sources */,
 				5BC5D51425E6030E00258D4D /* mainPage.swift in Sources */,
 				5BB2567D25E47AFA00FE2AC7 /* HomeViewController.swift in Sources */,
 				5B96608A25E4AC1200B6DCD2 /* SignUp.swift in Sources */,

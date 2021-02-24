@@ -7,10 +7,13 @@
 		
 import UIKit
 
-class ViewController: UIViewController, UINavigationControllerDelegate,UIImagePickerControllerDelegate {
+class UploadView: UIViewController, UINavigationControllerDelegate,UIImagePickerControllerDelegate {
     
     @IBOutlet weak var myImageView: UIImageView!
 
+    @IBAction func SkipButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "FourthSegue", sender: self)
+    }
     @IBAction func uploadButton(_ sender: Any) {
         
         let imagePicker = UIImagePickerController()
