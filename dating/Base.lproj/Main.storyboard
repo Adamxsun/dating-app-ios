@@ -252,19 +252,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spiderman" translatesAutoresizingMaskIntoConstraints="NO" id="bjt-zA-Sbd">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bjt-zA-Sbd">
                                 <rect key="frame" x="41" y="100" width="332" height="598"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="23" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="4Ko-Gx-HUn">
-                                <rect key="frame" x="109" y="648" width="196" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="David" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="kSa-Bc-vZD">
-                                <rect key="frame" x="50" y="648" width="196" height="48"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="age" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="4Ko-Gx-HUn">
+                                <rect key="frame" x="141" y="648" width="196" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
@@ -276,14 +269,27 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1k-cf-QSS">
                                         <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                         <state key="normal" image="like2"/>
+                                        <connections>
+                                            <action selector="LikeButton:" destination="kg5-HC-Cs6" eventType="touchUpInside" id="ymP-Gg-q4o"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oz8-yL-pRw">
                                         <rect key="frame" x="64" y="0.0" width="64" height="64"/>
                                         <state key="normal" image="dislike3"/>
+                                        <connections>
+                                            <action selector="DislikeButton:" destination="kg5-HC-Cs6" eventType="touchUpInside" id="w6W-sJ-CuW"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="name" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="kSa-Bc-vZD">
+                                <rect key="frame" x="52" y="648" width="196" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Stm-wr-UMK"/>
                         <color key="backgroundColor" systemColor="labelColor"/>
@@ -297,6 +303,11 @@
                             <constraint firstItem="Stm-wr-UMK" firstAttribute="bottom" secondItem="s07-Em-5LC" secondAttribute="bottom" constant="38" id="jzx-lN-R3K"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ageView" destination="4Ko-Gx-HUn" id="b83-4Y-ZR3"/>
+                        <outlet property="nameView" destination="kSa-Bc-vZD" id="1Wh-qh-ibW"/>
+                        <outlet property="photoView" destination="bjt-zA-Sbd" id="06F-hg-H8F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JiT-55-Ban" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -313,7 +324,6 @@
         <image name="fine" width="200" height="200"/>
         <image name="like2" width="64" height="64"/>
         <image name="pinred" width="1024" height="768"/>
-        <image name="spiderman" width="1200" height="1200"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

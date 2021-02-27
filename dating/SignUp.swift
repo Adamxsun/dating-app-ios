@@ -47,6 +47,7 @@ class SignUp: UIViewController {
             bottombutton.setTitle("Woman", for: .normal)
         }
         else if step == 4 {
+            //let UserGender = ""
             endFunction()
         }
         else if step == 5 {
