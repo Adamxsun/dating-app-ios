@@ -28,8 +28,8 @@ class UploadView: UIViewController, UINavigationControllerDelegate,UIImagePicker
   
     }//uploadButto
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        let image = info[UIImagePickerController.InfoKey.originalImage.rawValue]as! UIImage?
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[UIImagePickerController.InfoKey.originalImage]as! UIImage?
         myImageView.image = image
         dismiss(animated: true, completion: nil)
     }

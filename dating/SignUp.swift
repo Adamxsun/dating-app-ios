@@ -14,7 +14,7 @@ class SignUp: UIViewController {
     @IBOutlet weak var Blank: UITextField!
     @IBOutlet weak var bottombutton: UIButton!
     @IBOutlet weak var Upbutton: UIButton!
-    
+    static var UserGender = ""
     var step = 1
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +47,7 @@ class SignUp: UIViewController {
             bottombutton.setTitle("Woman", for: .normal)
         }
         else if step == 4 {
-            //let UserGender = ""
+            SignUp.UserGender = "woman"
             endFunction()
         }
         else if step == 5 {
@@ -56,6 +56,7 @@ class SignUp: UIViewController {
         }
     }//continuebutton
     @IBAction func manButton(_ sender: Any) {
+        SignUp.UserGender = "man"
         endFunction()
     }
     //this function is used for step 4

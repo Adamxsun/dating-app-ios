@@ -26,7 +26,7 @@ class mainPage: UIViewController, CLLocationManagerDelegate {
                 7: ["name" : "Zac","age" : "19", "gender" : "man","fMovie" : "Truman"],
                 8: ["name" : "Joey","age" : "19", "gender" : "man","fMovie" : "Truman"]]
     
-    var userOrder = 1
+    var userOrder = 1	
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -63,10 +63,23 @@ class mainPage: UIViewController, CLLocationManagerDelegate {
         updateUserView()
     }
     func updateUserView (){
-        photoView.image = UIImage(named: String(userOrder))
-        nameView.text = user[userOrder]?["name"]
-        ageView.text = user[userOrder]?["age"]
-    }
+        if user[userOrder] != nil{
+            if SignUp.UserGender == user[userOrder]?["gender"]{
+                photoView.image = UIImage(named: String(userOrder))
+                nameView.text = user[userOrder]?["name"]
+                ageView.text = user[userOrder]?["age"]
+            }//if
+            else{
+                userOrder += 1
+                updateUserView()
+            }//else
+        }//if
+        else{
+            photoView.image = UIImage(named: "clipart1831124")
+            nameView.text = "we are searching ....."
+            ageView.text = user[userOrder]?[""]
+        }
+    }//updateUserView
     // Specify the orientation.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
