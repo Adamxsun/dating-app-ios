@@ -85,4 +85,8 @@ class mainPage: UIViewController, CLLocationManagerDelegate {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         print("locations = \(locValue.latitude) \(locValue.longitude)")
     }
-}
+    
+    @IBAction func chatButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "chatSegue", sender: self)
+    }
+}//mainPage

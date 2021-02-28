@@ -283,6 +283,17 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Cd-qj-YF8">
+                                <rect key="frame" x="299" y="20" width="74" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Chat" backgroundImage="Background">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="chatButton:" destination="kg5-HC-Cs6" eventType="touchUpInside" id="fl1-mZ-269"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="name" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="kSa-Bc-vZD">
                                 <rect key="frame" x="52" y="648" width="285" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -307,11 +318,61 @@
                         <outlet property="ageView" destination="4Ko-Gx-HUn" id="b83-4Y-ZR3"/>
                         <outlet property="nameView" destination="kSa-Bc-vZD" id="1Wh-qh-ibW"/>
                         <outlet property="photoView" destination="bjt-zA-Sbd" id="06F-hg-H8F"/>
+                        <segue destination="5Yy-AE-BDh" kind="showDetail" identifier="chatSegue" id="qaj-mF-RkP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JiT-55-Ban" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="660.86956521739137" y="-1136.3839285714284"/>
+        </scene>
+        <!--chat-->
+        <scene sceneID="aKW-sZ-GOp">
+            <objects>
+                <viewController id="a12-h2-sMi" customClass="chat" customModule="dating" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="COe-Ij-IAe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GVj-YE-KDO">
+                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="t5C-7c-DGa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GVj-YE-KDO" firstAttribute="top" secondItem="t5C-7c-DGa" secondAttribute="top" id="PZA-0G-sRB"/>
+                            <constraint firstItem="t5C-7c-DGa" firstAttribute="trailing" secondItem="GVj-YE-KDO" secondAttribute="trailing" id="hSh-DF-YUM"/>
+                            <constraint firstItem="GVj-YE-KDO" firstAttribute="leading" secondItem="t5C-7c-DGa" secondAttribute="leading" id="shz-IU-u7x"/>
+                            <constraint firstItem="t5C-7c-DGa" firstAttribute="bottom" secondItem="GVj-YE-KDO" secondAttribute="bottom" id="suf-Gf-iAo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="chat" id="cU0-Hy-pX6"/>
+                    <connections>
+                        <outlet property="myTable" destination="GVj-YE-KDO" id="JU3-RI-JOj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l8W-Wg-eU5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1084.0579710144928" y="-1810.0446428571427"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FeI-Cc-sWc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Yy-AE-BDh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="R1L-UM-cYE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="a12-h2-sMi" kind="relationship" relationship="rootViewController" id="OaA-qU-jDo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IbT-fA-VQu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="173.91304347826087" y="-1810.0446428571427"/>
         </scene>
     </scenes>
     <resources>
@@ -326,6 +387,9 @@
         <image name="pinred" width="1024" height="768"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
