@@ -14,16 +14,18 @@ class chat:UIViewController, UITableViewDataSource, UITableViewDelegate{
         myTable.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         myTable.delegate = self
         myTable.dataSource = self
+        view.backgroundColor = .orange
     }
-    
+   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for:indexPath)
-        cell.textLabel?.text = "🥰"
+        cell.textLabel?.text = "🥰New Matched🥰"
         cell.accessoryType = .disclosureIndicator
+        
         return cell
     }
     
@@ -32,7 +34,7 @@ class chat:UIViewController, UITableViewDataSource, UITableViewDelegate{
         
         //show chat message
         let vc =  chatwith()
-        vc.title = "Chat"
+        vc.title = "⭐️⭐️"
         navigationController?.pushViewController(vc, animated: true)
     }
     

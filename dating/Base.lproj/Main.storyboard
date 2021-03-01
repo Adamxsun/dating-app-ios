@@ -325,7 +325,7 @@
             </objects>
             <point key="canvasLocation" x="660.86956521739137" y="-1136.3839285714284"/>
         </scene>
-        <!--chat-->
+        <!--⭐️Chat ⭐️-->
         <scene sceneID="aKW-sZ-GOp">
             <objects>
                 <viewController id="a12-h2-sMi" customClass="chat" customModule="dating" customModuleProvider="target" sceneMemberID="viewController">
@@ -347,7 +347,11 @@
                             <constraint firstItem="t5C-7c-DGa" firstAttribute="bottom" secondItem="GVj-YE-KDO" secondAttribute="bottom" id="suf-Gf-iAo"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="chat" id="cU0-Hy-pX6"/>
+                    <navigationItem key="navigationItem" id="cU0-Hy-pX6">
+                        <string key="title" base64-UTF8="YES">
+4q2Q77iPQ2hhdAPirZDvuI8
+</string>
+                    </navigationItem>
                     <connections>
                         <outlet property="myTable" destination="GVj-YE-KDO" id="JU3-RI-JOj"/>
                     </connections>

@@ -21,6 +21,7 @@
 		5BD5D37725EC1E4D004D9893 /* chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD5D37625EC1E4D004D9893 /* chat.swift */; };
 		5BD5D37F25EC2322004D9893 /* chatwith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD5D37E25EC2322004D9893 /* chatwith.swift */; };
 		5BD5D38B25EC3657004D9893 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5BD5D38A25EC3657004D9893 /* MessageKit */; };
+		5BD5D39425ECB3A8004D9893 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 5BD5D39325ECB3A8004D9893 /* SDWebImage */; };
 		DC5CFAF43BFC926607FBEFC7 /* Pods_datingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B5B3B8BBD536827E3AFC1D6 /* Pods_datingTests.framework */; };
 		E994F1CC68DB8111239CFDF7 /* Pods_dating_datingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7623081CE811559B55394CF0 /* Pods_dating_datingUITests.framework */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BD5D39425ECB3A8004D9893 /* SDWebImage in Frameworks */,
 				5BD5D38B25EC3657004D9893 /* MessageKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,6 +204,7 @@
 			name = dating;
 			packageProductDependencies = (
 				5BD5D38A25EC3657004D9893 /* MessageKit */,
+				5BD5D39325ECB3A8004D9893 /* SDWebImage */,
 			);
 			productName = dating;
 			productReference = 5BB2567525E47AFA00FE2AC7 /* dating.app */;
@@ -278,6 +281,7 @@
 			mainGroup = 5BB2566C25E47AFA00FE2AC7;
 			packageReferences = (
 				5BD5D38925EC3657004D9893 /* XCRemoteSwiftPackageReference "MessageKit" */,
+				5BD5D39225ECB3A8004D9893 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 5BB2567625E47AFA00FE2AC7 /* Products */;
 			projectDirPath = "";
@@ -747,6 +751,14 @@
 				minimumVersion = 3.5.0;
 			};
 		};
+		5BD5D39225ECB3A8004D9893 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -754,6 +766,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5BD5D38925EC3657004D9893 /* XCRemoteSwiftPackageReference "MessageKit" */;
 			productName = MessageKit;
+		};
+		5BD5D39325ECB3A8004D9893 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BD5D39225ECB3A8004D9893 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
