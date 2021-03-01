@@ -13,7 +13,7 @@ class UploadView: UIViewController, UINavigationControllerDelegate,UIImagePicker
 
     @IBAction func SkipButton(_ sender: Any) {
         self.performSegue(withIdentifier: "FourthSegue", sender: self)
-    }
+    }//SkipButton
     @IBAction func uploadButton(_ sender: Any) {
         
         let imagePicker = UIImagePickerController()
@@ -32,13 +32,13 @@ class UploadView: UIViewController, UINavigationControllerDelegate,UIImagePicker
         let image = info[UIImagePickerController.InfoKey.originalImage]as! UIImage?
         myImageView.image = image
         dismiss(animated: true, completion: nil)
-    }
+    }//imagePickerController
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-    }
+    }//viewDidlOAD
     override open var shouldAutorotate: Bool {
        return false
-    }
-}
+    }//shoudaUTOrotate
+}//UploadView
