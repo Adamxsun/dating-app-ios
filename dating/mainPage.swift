@@ -17,14 +17,14 @@ class mainPage: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var ageView: UITextField!
     let locationManager = CLLocationManager()
     @IBOutlet weak var likebutton: UIButton!
-    var user = [1:["name" : "Spider","age" : "23", "gender" : "man","fMovie" : "Spider Man"],
-                2: ["name" : "Lily","age" : "19", "gender" : "woman","fMovie" : "Truman"],
-                3: ["name" : "Adam","age" : "19", "gender" : "man","fMovie" : "HarryPotter"],
-                4: ["name" : "Lucy","age" : "23", "gender" : "woman","fMovie" : "Truman"],
-                5 :["name" : "Emily","age" : "19", "gender" : "woman","fMovie" : "Truman"],
-                6: ["name" : "David","age" : "19", "gender" : "man","fMovie" : "Truman"],
-                7: ["name" : "Zac","age" : "19", "gender" : "man","fMovie" : "Truman"],
-                8: ["name" : "Joey","age" : "19", "gender" : "man","fMovie" : "Truman"]]
+    var user = [1:["name" : "Spider","age" : "23", "gender" : "man","fMovie" : "Spider Man","match":true],
+                2: ["name" : "Lily","age" : "19", "gender" : "woman","fMovie" : "Truman","match":true],
+                3: ["name" : "Adam","age" : "19", "gender" : "man","fMovie" : "HarryPotter","match":true],
+                4: ["name" : "Lucy","age" : "23", "gender" : "woman","fMovie" : "Truman","match":true],
+                5 :["name" : "Emily","age" : "19", "gender" : "woman","fMovie" : "Truman","match":true],
+                6: ["name" : "David","age" : "19", "gender" : "man","fMovie" : "Truman","match":true],
+                7: ["name" : "Zac","age" : "19", "gender" : "man","fMovie" : "Truman","match":true],
+                8: ["name" : "Joey","age" : "19", "gender" : "man","fMovie" : "Truman","match":true]]
     
     var userOrder = 1	
     override func viewDidLoad() {
@@ -39,35 +39,36 @@ class mainPage: UIViewController, CLLocationManagerDelegate {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
-            }
+            }//if
         updateUserView()
         // Do any additional setup after loading the view.
     }
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         if UIDevice.current.userInterfaceIdiom == .phone {
             return .allButUpsideDown
-        } else {
+        }//if
+        else {
             return .all
-        }
-    }
+        }//else
+    }//supportedInterfaceOrientations
     // Set the shouldAutorotate to False
     override open var shouldAutorotate: Bool {
        return false
-    }
+    }//shouldAutorotate
     @IBAction func LikeButton(_ sender: Any) {
         userOrder += 1
         updateUserView()
-    }
+    }//LikeButton
     @IBAction func DislikeButton(_ sender: Any) {
         userOrder += 1
         updateUserView()
-    }
+    }//DislikeButton
     func updateUserView (){
         if user[userOrder] != nil{
-            if SignUp.UserGender == user[userOrder]?["gender"]{
+            if SignUp.UserGender == user[userOrder]?["gender"] as! String{
                 photoView.image = UIImage(named: String(userOrder))
-                nameView.text = user[userOrder]?["name"]
-                ageView.text = user[userOrder]?["age"]
+                nameView.text = user[userOrder]?["name"] as? String
+                ageView.text = user[userOrder]?["age"] as? String
             }//if
             else{
                 userOrder += 1
@@ -77,16 +78,16 @@ class mainPage: UIViewController, CLLocationManagerDelegate {
         else{
             photoView.image = UIImage(named: "clipart1831124")
             nameView.text = "we are searching ....."
-            ageView.text = user[userOrder]?[""]
-        }
+            ageView.text = user[userOrder]?[""] as? String
+        }//else
     }//updateUserView
     // Specify the orientation.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         print("locations = \(locValue.latitude) \(locValue.longitude)")
-    }
+    }//loacationManager
     
     @IBAction func chatButton(_ sender: Any) {
         self.performSegue(withIdentifier: "chatSegue", sender: self)
-    }
+    }//chatButton
 }//mainPage

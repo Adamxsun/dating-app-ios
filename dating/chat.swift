@@ -1,7 +1,6 @@
 //
 //  chat.swift
 //  dating
-//
 //  Created by Xiao Sun on 2021-02-28.
 //
 
@@ -15,11 +14,11 @@ class chat:UIViewController, UITableViewDataSource, UITableViewDelegate{
         myTable.delegate = self
         myTable.dataSource = self
         view.backgroundColor = .orange
-    }
+    }//viewDidLoad
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
-    }
+    }//tableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for:indexPath)
@@ -27,7 +26,7 @@ class chat:UIViewController, UITableViewDataSource, UITableViewDelegate{
         cell.accessoryType = .disclosureIndicator
         
         return cell
-    }
+    }//tableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -36,10 +35,10 @@ class chat:UIViewController, UITableViewDataSource, UITableViewDelegate{
         let vc =  chatwith()
         vc.title = "⭐️⭐️"
         navigationController?.pushViewController(vc, animated: true)
-    }
+    }//tableView
     
     override open var shouldAutorotate: Bool {
        return false
-    }
+    }//shouldAutorotate
     
-}
+}//chat

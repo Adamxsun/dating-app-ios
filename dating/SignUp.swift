@@ -28,7 +28,7 @@ class SignUp: UIViewController {
             Blank.text = "First Name"
             ProgressBar.progress = 0.3
             print(UserEmail)
-        }
+        }//1
         else if step == 2 {
             step = step + 1
             UpText.text = "What is your age?"
@@ -36,7 +36,7 @@ class SignUp: UIViewController {
             Blank.text = "Your age"
             ProgressBar.progress = 0.5
             print(UserName)
-        }
+        }//2
         else if step == 3 {
             step = step + 1
             let UserAge = Blank.text
@@ -45,21 +45,21 @@ class SignUp: UIViewController {
             Upbutton.isHidden = false
             ProgressBar.progress = 0.8
             bottombutton.setTitle("Woman", for: .normal)
-        }
+        }//3
         else if step == 4 {
             SignUp.UserGender = "woman"
             endFunction()
-        }
+        }//4
         else if step == 5 {
             let UserMoive = Blank.text
             self.performSegue(withIdentifier: "ThridSegue", sender: self)
-        }
+        }//5
     }//continuebutton
     @IBAction func manButton(_ sender: Any) {
         SignUp.UserGender = "man"
         endFunction()
-    }
-    //this function is used for step 4
+    }//4
+
     func endFunction(){
         step = step + 1
         UpText.text = "My favorite Movie"
@@ -68,11 +68,10 @@ class SignUp: UIViewController {
         ProgressBar.progress = 1
         Blank.text = "Movie name"
         Blank.isHidden = false
-    }
+    }//endFunction
     
     override open var shouldAutorotate: Bool {
        return false
-    }
-
-}
+    }//shouldAutorotate
+}//SignUp
 
