@@ -8,6 +8,8 @@
 import UIKit
 import MessageKit
 import InputBarAccessoryView
+import SDWebImage
+
 struct Sender:SenderType{
     var senderId: String
     var displayName: String
@@ -25,7 +27,7 @@ class chatwith: MessagesViewController, MessagesDataSource, MessagesLayoutDelega
     let otherUser = Sender(senderId: "other", displayName: "ee")
     var messages = [MessageType]()
     var messageIdNumber = 2
-    
+    var user2ImgUrl: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,5 +71,14 @@ class chatwith: MessagesViewController, MessagesDataSource, MessagesLayoutDelega
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
         return isFromCurrentSender(message: message) ? .orange: .lightGray
     }
-    
+    func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
+            
+        if message.sender.senderId == currentUser.senderId {
+            avatarView.image = UIImage(named: "clipart1831124")
+                }
+        else {
+                    avatarView.image = UIImage(named: "clipart1831124")
+                }
+    }//configureAvatarView
 }
+
