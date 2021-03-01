@@ -22,7 +22,7 @@ class chat:UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for:indexPath)
-        cell.textLabel?.text = "🥰New Matched🥰"
+        cell.textLabel?.text = "🥰New Matched🥰\(mainPage.matchedUser)"
         cell.accessoryType = .disclosureIndicator
         
         return cell
@@ -33,7 +33,7 @@ class chat:UIViewController, UITableViewDataSource, UITableViewDelegate{
         
         //show chat message
         let vc =  chatwith()
-        vc.title = "⭐️⭐️"
+        vc.title = "⭐️\(mainPage.matchedUser)⭐️"
         navigationController?.pushViewController(vc, animated: true)
     }//tableView
     

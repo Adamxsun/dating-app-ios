@@ -30,26 +30,26 @@ class chatwith: MessagesViewController, MessagesDataSource, MessagesLayoutDelega
     var user2ImgUrl: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        var firstMessage = "You are matched \(mainPage.matchedUser) together! Let's talk now!"
         messages.append(Message(sender: otherUser,
                                 messageId: "1",
                                 sentDate: Date().addingTimeInterval(-86400),
-                                kind: .text("You are matched together! Let's talk now!")))
+                                kind: .text(firstMessage)))
  
         messageInputBar.delegate = self
         
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
-    }
+    }//viewDidLoad
     
     func currentSender() -> SenderType {
         return currentUser
-    }
+    }//curentSender
     
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
         return messages[indexPath.section]
-    }
+    }//messageForItem
     
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         var textSr = inputBar.inputTextView.text
@@ -60,25 +60,26 @@ class chatwith: MessagesViewController, MessagesDataSource, MessagesLayoutDelega
                                 kind: .text(textSr!)))
                         
         messagesCollectionView.reloadData()
-        messagesCollectionView.scrollToBottom(animated: true)
+        messagesCollectionView.scrollToLastItem(animated: true)
         inputBar.inputTextView.text = ""
-    }
+    }//inputBar
     
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
         return messages.count
-    }
+    }//numberOfSections
     
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
         return isFromCurrentSender(message: message) ? .orange: .lightGray
-    }
+    }//backgroundColor
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
             
         if message.sender.senderId == currentUser.senderId {
             avatarView.image = UploadView.userImage
-                }
+        }//if
         else {
-                    avatarView.image = UIImage(named: "clipart1831124")
-                }
+            avatarView.image = UIImage(named: mainPage.matchedUserImage)
+        }//else
+        
     }//configureAvatarView
 }
 

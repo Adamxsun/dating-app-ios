@@ -263,8 +263,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s07-Em-5LC">
-                                <rect key="frame" x="41" y="706" width="128" height="64"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="s07-Em-5LC">
+                                <rect key="frame" x="41" y="706" width="328" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1k-cf-QSS">
                                         <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
@@ -274,7 +274,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oz8-yL-pRw">
-                                        <rect key="frame" x="64" y="0.0" width="64" height="64"/>
+                                        <rect key="frame" x="264" y="0.0" width="64" height="64"/>
                                         <state key="normal" image="dislike"/>
                                         <connections>
                                             <action selector="DislikeButton:" destination="kg5-HC-Cs6" eventType="touchUpInside" id="w6W-sJ-CuW"/>
