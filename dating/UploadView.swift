@@ -10,7 +10,7 @@ import UIKit
 class UploadView: UIViewController, UINavigationControllerDelegate,UIImagePickerControllerDelegate {
     
     @IBOutlet weak var myImageView: UIImageView!
-
+    static var userImage :UIImage?
     @IBAction func SkipButton(_ sender: Any) {
         self.performSegue(withIdentifier: "FourthSegue", sender: self)
     }//SkipButton
@@ -30,6 +30,7 @@ class UploadView: UIViewController, UINavigationControllerDelegate,UIImagePicker
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage]as! UIImage?
+        UploadView.userImage = image
         myImageView.image = image
         dismiss(animated: true, completion: nil)
     }//imagePickerController

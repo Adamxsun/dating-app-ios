@@ -74,7 +74,7 @@ class chatwith: MessagesViewController, MessagesDataSource, MessagesLayoutDelega
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
             
         if message.sender.senderId == currentUser.senderId {
-            avatarView.image = UIImage(named: "clipart1831124")
+            avatarView.image = UploadView.userImage
                 }
         else {
                     avatarView.image = UIImage(named: "clipart1831124")
