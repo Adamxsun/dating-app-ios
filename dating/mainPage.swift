@@ -15,6 +15,7 @@ class mainPage: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var popupView: UIView!
     @IBOutlet var blurView: UIVisualEffectView!
     
+    @IBOutlet weak var movieText: UILabel!
     @IBOutlet weak var rightImage: UIImageView!
     @IBOutlet weak var leftImage: UIImageView!
     @IBOutlet weak var matchedText: UILabel!
@@ -98,6 +99,15 @@ class mainPage: UIViewController, CLLocationManagerDelegate {
                 photoView.image = UIImage(named: String(userOrder))
                 nameView.text = mainPage.user[userOrder]?["name"]
                 ageView.text = mainPage.user[userOrder]?["age"]
+                var movieName = mainPage.user[userOrder]?["fMovie"]
+                if mainPage.user[userOrder]!["fMovie"] == SignUp.UserMovie {
+                    movieText.text = "\(mainPage.user[userOrder]?["name"] ?? "") also likes \(movieName ?? "")"
+                    movieText.isHidden = false
+                }//
+                else
+                {
+                    movieText.isHidden = true
+                }//else
             }//if
             else{
                 userOrder += 1
