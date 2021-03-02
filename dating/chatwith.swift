@@ -41,6 +41,14 @@ class chatwith: MessagesViewController, MessagesDataSource, MessagesLayoutDelega
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
+        if chat.talkHelper == true {
+            if SignUp.UserGender == "woman"{
+                messageInputBar.inputTextView.text = "My mom told me that life was a deck of cards🤔 So I guess you must be the queen of hearts."
+            }
+            else{
+                messageInputBar.inputTextView.text = "My mom told me that life was a deck of cards🤔 So I guess you must be the King of clubs."
+            }
+        }
     }//viewDidLoad
     
     func currentSender() -> SenderType {
