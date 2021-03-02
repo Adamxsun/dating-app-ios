@@ -61,6 +61,11 @@ class chatwith: MessagesViewController, MessagesDataSource, MessagesLayoutDelega
                         
         messagesCollectionView.reloadData()
         messagesCollectionView.scrollToLastItem(animated: true)
+        if chat.water == false {
+            chat.water = true
+        }
+        if textSr == "GrowUp!"
+        {chat.plantDate += 100}
         inputBar.inputTextView.text = ""
     }//inputBar
     

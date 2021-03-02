@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -421,17 +422,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GVj-YE-KDO">
-                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="704"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIB-pe-nc7">
+                                <rect key="frame" x="0.0" y="758" width="141" height="84"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Plant">
+                                    <color key="titleColor" name="outgoingMessageBackground"/>
+                                </state>
+                                <connections>
+                                    <action selector="plantButton:" destination="a12-h2-sMi" eventType="touchUpInside" id="Kwo-wJ-RnB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KgE-Sc-lln">
+                                <rect key="frame" x="273" y="758" width="141" height="84"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="pickupline generator">
+                                    <color key="titleColor" systemColor="systemPinkColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="TalkButton:" destination="a12-h2-sMi" eventType="touchUpInside" id="mQj-Uw-G5a"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="t5C-7c-DGa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="GVj-YE-KDO" firstAttribute="top" secondItem="t5C-7c-DGa" secondAttribute="top" id="PZA-0G-sRB"/>
+                            <constraint firstItem="t5C-7c-DGa" firstAttribute="bottom" secondItem="GVj-YE-KDO" secondAttribute="bottom" constant="48" id="dNN-cT-ahe"/>
                             <constraint firstItem="t5C-7c-DGa" firstAttribute="trailing" secondItem="GVj-YE-KDO" secondAttribute="trailing" id="hSh-DF-YUM"/>
                             <constraint firstItem="GVj-YE-KDO" firstAttribute="leading" secondItem="t5C-7c-DGa" secondAttribute="leading" id="shz-IU-u7x"/>
-                            <constraint firstItem="t5C-7c-DGa" firstAttribute="bottom" secondItem="GVj-YE-KDO" secondAttribute="bottom" id="suf-Gf-iAo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cU0-Hy-pX6">
@@ -440,12 +465,81 @@
 </string>
                     </navigationItem>
                     <connections>
+                        <outlet property="dateText" destination="k1B-fa-Umr" id="nZM-w2-Joc"/>
                         <outlet property="myTable" destination="GVj-YE-KDO" id="JU3-RI-JOj"/>
+                        <outlet property="plantImage" destination="CsY-MM-vxi" id="e0H-Vo-agp"/>
+                        <outlet property="plantName" destination="k5X-14-qMQ" id="zJy-P1-sev"/>
+                        <outlet property="plantView" destination="S0N-ol-g5v" id="yaU-mG-24V"/>
+                        <outlet property="waterText" destination="M4t-zJ-BPy" id="1Ap-Xi-fXM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8W-Wg-eU5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="S0N-ol-g5v">
+                    <rect key="frame" x="0.0" y="0.0" width="403" height="297"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3ep-cz-RHz">
+                            <rect key="frame" x="209" y="23" width="194" height="154"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plant with:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kn-91-fVa">
+                                    <rect key="frame" x="0.0" y="0.0" width="194" height="38.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plant belongs:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5X-14-qMQ">
+                                    <rect key="frame" x="0.0" y="38.5" width="194" height="38.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date: 1 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1B-fa-Umr">
+                                    <rect key="frame" x="0.0" y="77" width="194" height="38.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Need water" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4t-zJ-BPy">
+                                    <rect key="frame" x="0.0" y="115.5" width="194" height="38.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3D-bI-cQQ">
+                            <rect key="frame" x="0.0" y="257" width="403" height="40"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="w4D-e2-HZt"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <state key="normal" title="Done">
+                                <color key="titleColor" systemColor="systemPinkColor"/>
+                            </state>
+                            <connections>
+                                <action selector="doneButton:" destination="a12-h2-sMi" eventType="touchUpInside" id="Hb2-u9-LFH"/>
+                            </connections>
+                        </button>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plant1" translatesAutoresizingMaskIntoConstraints="NO" id="CsY-MM-vxi">
+                            <rect key="frame" x="20" y="128" width="100" height="96"/>
+                        </imageView>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="KEc-G8-RIH"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="3ep-cz-RHz" firstAttribute="top" secondItem="S0N-ol-g5v" secondAttribute="top" constant="23" id="849-UU-PSj"/>
+                        <constraint firstItem="CsY-MM-vxi" firstAttribute="leading" secondItem="KEc-G8-RIH" secondAttribute="leading" constant="20" id="D3p-Hl-KtB"/>
+                        <constraint firstItem="X3D-bI-cQQ" firstAttribute="trailing" secondItem="KEc-G8-RIH" secondAttribute="trailing" id="DaN-Tq-OK0"/>
+                        <constraint firstItem="3ep-cz-RHz" firstAttribute="trailing" secondItem="KEc-G8-RIH" secondAttribute="trailing" id="WFx-bs-odw"/>
+                        <constraint firstItem="X3D-bI-cQQ" firstAttribute="bottom" secondItem="KEc-G8-RIH" secondAttribute="bottom" id="ngh-2b-6EM"/>
+                        <constraint firstItem="CsY-MM-vxi" firstAttribute="top" secondItem="KEc-G8-RIH" secondAttribute="top" constant="84" id="wZ7-wK-9gc"/>
+                        <constraint firstItem="X3D-bI-cQQ" firstAttribute="top" secondItem="CsY-MM-vxi" secondAttribute="bottom" constant="33" id="xqS-di-fDV"/>
+                        <constraint firstItem="X3D-bI-cQQ" firstAttribute="leading" secondItem="KEc-G8-RIH" secondAttribute="leading" id="zO2-yT-EEZ"/>
+                    </constraints>
+                </view>
             </objects>
-            <point key="canvasLocation" x="1084.0579710144928" y="-1810.0446428571427"/>
+            <point key="canvasLocation" x="1082.608695652174" y="-1810.0446428571427"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FeI-Cc-sWc">
@@ -478,6 +572,10 @@
         <image name="fine" width="200" height="200"/>
         <image name="like" width="64" height="64"/>
         <image name="pinred" width="1024" height="768"/>
+        <image name="plant1" width="100" height="100"/>
+        <namedColor name="outgoingMessageBackground">
+            <color red="0.20399998128414154" green="0.77999997138977051" blue="0.34899997711181641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -35,7 +35,7 @@ class mainPage: UIViewController, CLLocationManagerDelegate {
     
     static var matchedUser = ""
     static var matchedUserImage = ""
-    
+    static var matched = false
     var userOrder = 1
     
     override func viewDidLoad() {
@@ -90,6 +90,7 @@ class mainPage: UIViewController, CLLocationManagerDelegate {
         matchedText.text = "You get matched with \(mainPage.matchedUser)"
         leftImage.image = UIImage(named: mainPage.matchedUserImage)
         rightImage.image = UploadView.userImage
+        mainPage.matched = true
     }
     func updateUserView (){
         if mainPage.user[userOrder] != nil{
