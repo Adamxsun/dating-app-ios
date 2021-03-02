@@ -12,6 +12,12 @@ import UserNotifications
 import MapKit
 class mainPage: UIViewController, CLLocationManagerDelegate {
     
+    @IBOutlet var popupView: UIView!
+    @IBOutlet var blurView: UIVisualEffectView!
+    
+    @IBOutlet weak var rightImage: UIImageView!
+    @IBOutlet weak var leftImage: UIImageView!
+    @IBOutlet weak var matchedText: UILabel!
     @IBOutlet weak var photoView: UIImageView!
     @IBOutlet weak var nameView: UITextField!
     @IBOutlet weak var ageView: UITextField!
@@ -39,7 +45,11 @@ class mainPage: UIViewController, CLLocationManagerDelegate {
 
         // For use in foreground
         self.locationManager.requestWhenInUseAuthorization()
-
+        //
+        blurView.bounds = self.view.bounds
+        popupView.bounds = CGRect(x:0,y:0,width: self.view.bounds.width * 0.9, height: self.view.bounds.height * 0.4)
+        
+        //
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
@@ -75,6 +85,11 @@ class mainPage: UIViewController, CLLocationManagerDelegate {
     func getMarched(){
         mainPage.matchedUser = (mainPage.user[userOrder]?["name"])!
         mainPage.matchedUserImage = String(userOrder)
+        animateIn(desiredView: blurView)
+        animateIn(desiredView: popupView)
+        matchedText.text = "You get matched with \(mainPage.matchedUser)"
+        leftImage.image = UIImage(named: mainPage.matchedUserImage)
+        rightImage.image = UploadView.userImage
     }
     func updateUserView (){
         if mainPage.user[userOrder] != nil{
@@ -103,4 +118,30 @@ class mainPage: UIViewController, CLLocationManagerDelegate {
     @IBAction func chatButton(_ sender: Any) {
         self.performSegue(withIdentifier: "chatSegue", sender: self)
     }//chatButton
+    
+    @IBAction func doneButton(_ sender: Any) {
+        animateOut(desiredView: blurView)
+        animateOut(desiredView: popupView)
+    }
+    func animateIn(desiredView: UIView){
+        let backgroundView = self.view!
+        backgroundView.addSubview(desiredView)
+        
+        desiredView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        desiredView.alpha = 0
+        desiredView.center = backgroundView.center
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            desiredView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            desiredView.alpha = 1
+        })
+    }
+    func animateOut(desiredView: UIView){
+        UIView.animate(withDuration: 0.3, animations: {
+            desiredView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            desiredView.alpha = 0
+        });
+        
+        desiredView.removeFromSuperview()
+    }//animateOut
 }//mainPage
