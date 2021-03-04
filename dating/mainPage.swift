@@ -2,7 +2,7 @@
 //  mainPage.swift
 //  dating
 //
-//  Created by Xiao Sun on 2021-02-23.
+//  Created by Xiao Sun on 2021-02-25.
 //
 
 
@@ -58,7 +58,7 @@ class mainPage: UIViewController, CLLocationManagerDelegate {
             }//if
         updateUserView()
         // Do any additional setup after loading the view.
-    }
+    }//viewdidload
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         if UIDevice.current.userInterfaceIdiom == .phone {
             return .allButUpsideDown
@@ -72,6 +72,7 @@ class mainPage: UIViewController, CLLocationManagerDelegate {
        return false
     }//shouldAutorotate
     @IBAction func LikeButton(_ sender: Any) {
+        movieText.isHidden = true
         if mainPage.user[userOrder]?["match"] == "true"{
             getMarched()
         }
@@ -79,6 +80,7 @@ class mainPage: UIViewController, CLLocationManagerDelegate {
         updateUserView()
     }//LikeButton
     @IBAction func DislikeButton(_ sender: Any) {
+        movieText.isHidden = true
         userOrder += 1
         updateUserView()
     }//DislikeButton

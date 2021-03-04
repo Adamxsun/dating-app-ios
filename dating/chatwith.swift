@@ -2,7 +2,7 @@
 //  chatwith.swift
 //  dating
 //
-//  Created by Xiao Sun on 2021-02-28.
+//  Created by Xiao Sun on 2021-03-01.
 //
 
 import UIKit
@@ -75,6 +75,7 @@ class chatwith: MessagesViewController, MessagesDataSource, MessagesLayoutDelega
         if textSr == "GrowUp!"
         {chat.plantDate += 100}
         inputBar.inputTextView.text = ""
+        chat.talkHelper = false
     }//inputBar
     
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {

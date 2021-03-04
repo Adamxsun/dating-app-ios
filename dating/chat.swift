@@ -1,7 +1,7 @@
 //
 //  chat.swift
 //  dating
-//  Created by Xiao Sun on 2021-02-28.
+//  Created by Xiao Sun on 2021-03-01.
 //
 
 import UIKit
@@ -63,8 +63,8 @@ class chat:UIViewController, UITableViewDataSource, UITableViewDelegate{
         UIView.animate(withDuration: 0.3, animations: {
             desiredView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
             desiredView.alpha = 1
-        })
-    }
+        })//
+    }//
     func animateOut(desiredView: UIView){
         UIView.animate(withDuration: 0.3, animations: {
             desiredView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)

@@ -2,7 +2,7 @@
 //  File.swift
 //  dating
 //
-//  Created by Xiao Sun on 2021-02-22.
+//  Created by Xiao Sun on 2021-02-24.
 //
 
 import UIKit
@@ -59,7 +59,7 @@ class SignUp: UIViewController {
                 
                 genderBar.isHidden = false
                 genderText.isHidden = false
-                
+                warningText.isHidden = true
                 bottombutton.setTitle("Woman", for: .normal)}
             else{
                 warningText.text = "Please check if age is correct"
