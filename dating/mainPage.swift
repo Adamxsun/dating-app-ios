@@ -38,6 +38,7 @@ class mainPage: UIViewController, CLLocationManagerDelegate {
     static var matchedUserImage = ""
     static var matched = false
     var userOrder = 1
+    var genderEmoji = "♂︎"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,10 +98,21 @@ class mainPage: UIViewController, CLLocationManagerDelegate {
     }
     func updateUserView (){
         if mainPage.user[userOrder] != nil{
+            
             if SignUp.UserGender == mainPage.user[userOrder]?["gender"]!{
+                if SignUp.UserGender == "man"{
+                    genderEmoji = "♂︎"
+                    ageView.textColor = UIColor.blue
+                }
+                else{
+                    genderEmoji = "♂︎"
+                    ageView.textColor = UIColor.systemPink
+                }
                 photoView.image = UIImage(named: String(userOrder))
                 nameView.text = mainPage.user[userOrder]?["name"]
-                ageView.text = mainPage.user[userOrder]?["age"]
+                ageView.text = "\(genderEmoji) \(mainPage.user[userOrder]?["age"] ?? "")"
+                
+                
                 var movieName = mainPage.user[userOrder]?["fMovie"]
                 if mainPage.user[userOrder]!["fMovie"] == SignUp.UserMovie {
                     movieText.text = "\(mainPage.user[userOrder]?["name"] ?? "") also likes \(movieName ?? "")"
@@ -117,7 +129,7 @@ class mainPage: UIViewController, CLLocationManagerDelegate {
             }//else
         }//if
         else{
-            photoView.image = UIImage(named: "clipart1831124")
+            photoView.image = UploadView.userImage
             nameView.text = "we are searching ....."
             ageView.text = mainPage.user[userOrder]?[""]
         }//else
