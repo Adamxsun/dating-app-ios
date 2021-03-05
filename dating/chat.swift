@@ -19,11 +19,11 @@ class chat:UIViewController, UITableViewDataSource, UITableViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         plantView.bounds = CGRect(x:0,y:0,width: self.view.bounds.width * 0.9, height: self.view.bounds.height * 0.4)
+        view.backgroundColor = .systemPink
         if mainPage.matched == true{
             myTable.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
             myTable.delegate = self
             myTable.dataSource = self
-            view.backgroundColor = .orange
         }
         
     }//viewDidLoad
