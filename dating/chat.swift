@@ -82,6 +82,7 @@ class chat:UIViewController, UITableViewDataSource, UITableViewDelegate{
         if chat.water == true
         {
             waterText.text = "Had Water!"
+            waterText.textColor = .systemOrange
         }
         if chat.plantDate >= 200 {
             plantImage.image = UIImage(named: "plant3")
