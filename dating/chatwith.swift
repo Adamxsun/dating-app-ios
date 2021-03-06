@@ -22,12 +22,15 @@ struct Message:MessageType{
     var kind: MessageKind
 }
 class chatwith: MessagesViewController, MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate,InputBarAccessoryViewDelegate{
-    
+    //data
+    let pickuplineWoman = ["My mom told me that life was a deck of cards🤔 So I guess you must be the queen of hearts.","I always thought happiness started with an ‘h,’ but it turns out mine starts with ‘u.’","I don’t know which is prettier today—the weather, or your eyes."]
+    let pickuplineMan = ["My mom told me that life was a deck of cards🤔 So I guess you must be the King of clubs.","I swear someone stole the stars from the sky and put them in your eyes.","Are you a time traveler? Because I absolutely see you in my future."]
     let currentUser = Sender(senderId: "self", displayName: "Adam")
     let otherUser = Sender(senderId: "other", displayName: "ee")
     var messages = [MessageType]()
     var messageIdNumber = 2
     var user2ImgUrl: String?
+    //data
     override func viewDidLoad() {
         super.viewDidLoad()
         var firstMessage = "You are matched \(mainPage.matchedUser) together! Let's talk now!"
@@ -43,10 +46,10 @@ class chatwith: MessagesViewController, MessagesDataSource, MessagesLayoutDelega
         messagesCollectionView.messagesDisplayDelegate = self
         if chat.talkHelper == true {
             if SignUp.UserGender == "woman"{
-                messageInputBar.inputTextView.text = "My mom told me that life was a deck of cards🤔 So I guess you must be the queen of hearts."
+                messageInputBar.inputTextView.text = pickuplineWoman.randomElement()
             }
             else{
-                messageInputBar.inputTextView.text = "My mom told me that life was a deck of cards🤔 So I guess you must be the King of clubs."
+                messageInputBar.inputTextView.text = pickuplineMan.randomElement()
             }
         }
     }//viewDidLoad

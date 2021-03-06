@@ -8,7 +8,7 @@
 import UIKit
 
 class SignUp: UIViewController {
-    
+    //data
     @IBOutlet weak var genderBar: UISegmentedControl!
     @IBOutlet weak var warningText: UILabel!
     @IBOutlet weak var ProgressBar: UIProgressView!
@@ -25,6 +25,7 @@ class SignUp: UIViewController {
     static var UserAge = ""
     static var UserSelfGender = ""
     var step = 1
+    //data
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

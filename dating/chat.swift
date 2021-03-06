@@ -6,8 +6,8 @@
 
 import UIKit
 class chat:UIViewController, UITableViewDataSource, UITableViewDelegate{
+    //data
     @IBOutlet weak var myTable: UITableView!
-    
     @IBOutlet weak var plantName: UILabel!
     @IBOutlet weak var plantImage: UIImageView!
     @IBOutlet var plantView: UIView!
@@ -16,6 +16,7 @@ class chat:UIViewController, UITableViewDataSource, UITableViewDelegate{
     static var plantDate = 1
     static var talkHelper = false
     @IBOutlet weak var waterText: UILabel!
+    //data
     override func viewDidLoad() {
         super.viewDidLoad()
         plantView.bounds = CGRect(x:0,y:0,width: self.view.bounds.width * 0.9, height: self.view.bounds.height * 0.4)
