@@ -20,6 +20,10 @@ class SignUp: UIViewController {
     
     static var UserGender = ""
     static var UserMovie = ""
+    static var UserEmail = ""
+    static var UserName = ""
+    static var UserAge = ""
+    static var UserSelfGender = ""
     var step = 1
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +34,7 @@ class SignUp: UIViewController {
             if Blank.text!.isEmail == true {
                 step = step + 1
                 UpText.text = "What is your name?"
-                let UserEmail = Blank.text
+                SignUp.UserEmail = Blank.text!
                 Blank.text = "First Name"
                 ProgressBar.progress = 0.3
                 warningText.isHidden = true
@@ -43,15 +47,14 @@ class SignUp: UIViewController {
         else if step == 2 {
             step = step + 1
             UpText.text = "What is your age?"
-            let UserName = Blank.text
+            SignUp.UserName = Blank.text!
             Blank.text = "Your age"
             ProgressBar.progress = 0.5
-            print(UserName)
         }//2
         else if step == 3 {
             if Blank.text?.isNumeric == true {
                 step = step + 1
-                let UserAge = Blank.text
+                SignUp.UserAge = Blank.text!
                 UpText.text = "I am looking for"
                 Blank.isHidden = true
                 Upbutton.isHidden = false
@@ -88,7 +91,16 @@ class SignUp: UIViewController {
         ProgressBar.progress = 1
         Blank.text = "Movie name"
         Blank.isHidden = false
-        
+        if genderBar.numberOfSegments == 0{
+            SignUp.UserSelfGender = "man"
+        }
+        else if genderBar.numberOfSegments == 1 {
+            SignUp.UserSelfGender = "LGBTQ"
+        }
+        else
+        {
+            SignUp.UserSelfGender = "woman"
+        }
         genderBar.isHidden = true
         genderText.isHidden = true
     }//endFunction

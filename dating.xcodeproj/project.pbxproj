@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B87584025F33E1A0009C1B6 /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B87583F25F33E1A0009C1B6 /* profile.swift */; };
 		5B96608A25E4AC1200B6DCD2 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B96608925E4AC1200B6DCD2 /* SignUp.swift */; };
 		5BB2567925E47AFA00FE2AC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB2567825E47AFA00FE2AC7 /* AppDelegate.swift */; };
 		5BB2567B25E47AFA00FE2AC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB2567A25E47AFA00FE2AC7 /* SceneDelegate.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		1B5B3B8BBD536827E3AFC1D6 /* Pods_datingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_datingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		396A23E7832F261B763E62E0 /* Pods-dating.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dating.debug.xcconfig"; path = "Target Support Files/Pods-dating/Pods-dating.debug.xcconfig"; sourceTree = "<group>"; };
+		5B87583F25F33E1A0009C1B6 /* profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
 		5B96608925E4AC1200B6DCD2 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		5BB2567525E47AFA00FE2AC7 /* dating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dating.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB2567825E47AFA00FE2AC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				5BD5D37625EC1E4D004D9893 /* chat.swift */,
 				5BD5D37E25EC2322004D9893 /* chatwith.swift */,
 				5BC5D51325E6030E00258D4D /* mainPage.swift */,
+				5B87583F25F33E1A0009C1B6 /* profile.swift */,
 				5BB2567E25E47AFA00FE2AC7 /* Main.storyboard */,
 				5BB2568125E47AFB00FE2AC7 /* Assets.xcassets */,
 				5BB2568325E47AFB00FE2AC7 /* LaunchScreen.storyboard */,
@@ -395,6 +398,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B87584025F33E1A0009C1B6 /* profile.swift in Sources */,
 				5BD5D37725EC1E4D004D9893 /* chat.swift in Sources */,
 				5BC5D50F25E4D85F00258D4D /* UploadView.swift in Sources */,
 				5BC5D51425E6030E00258D4D /* mainPage.swift in Sources */,

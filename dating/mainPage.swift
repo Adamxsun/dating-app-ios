@@ -169,4 +169,7 @@ class mainPage: UIViewController, CLLocationManagerDelegate {
         
         desiredView.removeFromSuperview()
     }//animateOut
+    @IBAction func profileButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "ProfileSegue", sender: self)
+    }
 }//mainPage
