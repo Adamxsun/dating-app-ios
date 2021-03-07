@@ -11,7 +11,7 @@ import CoreLocation
 import UserNotifications
 import MapKit
 class mainPage: UIViewController, CLLocationManagerDelegate {
-    
+    //data
     @IBOutlet var popupView: UIView!
     @IBOutlet var blurView: UIVisualEffectView!
     
@@ -25,21 +25,21 @@ class mainPage: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     @IBOutlet weak var likebutton: UIButton!
     
-    static var user = [1:["name" : "Spider","age" : "23", "gender" : "man","fMovie" : "Spider Man","match":"true"],
+    static var user = [1:["name" : "Spider","age" : "23", "gender" : "man","fMovie" : "Spider Man","match":"false"],
                 2: ["name" : "Lily","age" : "19", "gender" : "woman","fMovie" : "Truman","match":"false"],
                 3: ["name" : "Adam","age" : "19", "gender" : "man","fMovie" : "HarryPotter","match":"false"],
-                4: ["name" : "Lucy","age" : "23", "gender" : "woman","fMovie" : "Truman","match":"true"],
+                4: ["name" : "Lucy","age" : "23", "gender" : "woman","fMovie" : "Titanic","match":"true"],
                 5 :["name" : "Emily","age" : "19", "gender" : "woman","fMovie" : "Truman","match":"false"],
-                6: ["name" : "David","age" : "19", "gender" : "man","fMovie" : "Truman","match":"false"],
+                6: ["name" : "David","age" : "19", "gender" : "man","fMovie" : "Titanic","match":"false"],
                 7: ["name" : "Zac","age" : "19", "gender" : "man","fMovie" : "Truman","match":"false"],
-                8: ["name" : "Joey","age" : "19", "gender" : "man","fMovie" : "Truman","match":"false"]]
+                8: ["name" : "Joey","age" : "19", "gender" : "man","fMovie" : "Truman","match":"true"]]
     
     static var matchedUser = ""
     static var matchedUserImage = ""
     static var matched = false
     var userOrder = 1
     var genderEmoji = "♂︎"
-    
+    //data
     override func viewDidLoad() {
         super.viewDidLoad()
 

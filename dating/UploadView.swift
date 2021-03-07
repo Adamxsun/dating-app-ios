@@ -8,9 +8,10 @@
 import UIKit
 
 class UploadView: UIViewController, UINavigationControllerDelegate,UIImagePickerControllerDelegate {
-    
+    //data
     @IBOutlet weak var myImageView: UIImageView!
     static var userImage :UIImage?
+    //data
     @IBAction func SkipButton(_ sender: Any) {
         self.performSegue(withIdentifier: "FourthSegue", sender: self)
     }//SkipButton

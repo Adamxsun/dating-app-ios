@@ -7,7 +7,7 @@
 
 import UIKit
 class profile: UIViewController {
-    
+    //data
     @IBOutlet weak var numberLike: UILabel!
     
     @IBOutlet weak var email: UILabel!
@@ -19,7 +19,7 @@ class profile: UIViewController {
     @IBOutlet weak var gender: UILabel!
     @IBOutlet weak var targetGender: UILabel!
     @IBOutlet weak var fMovie: UILabel!
-    
+    //data
     override func viewDidLoad() {
         super.viewDidLoad()
         fMovie.text = "Favorite Movie : \(SignUp.UserMovie)"
